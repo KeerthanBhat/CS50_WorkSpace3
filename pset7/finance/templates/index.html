@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <style>
+        table, th, td {
+    border: 1px solid black;
+    }
+    
+        th, td {
+    padding: 15px;
+    }
+        th, td {
+    text-align: center;
+    }
+    </style>
+    
+    
+    <table  class="table table-striped" style="width:100%">
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </tr>
+    {% for row in rows %}
+      <tr>
+        <td align = "center">{{ row.symbol }}</td>
+        <td align = "center">{{ row.name }}</td>
+        <td align = "center">{{ row.shares }}</td>
+        <td align = "center">${{ row.price }}</td> 
+        <td align = "center">${{ row.shares * row.price }}</td>
+      </tr>
+    {% endfor %}
+      <tr>
+          <td align = "center">CASH</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td align = "center">{{ cash }}</td>
+      </tr>
+      <tr>
+          <td align = "center">GRAND TOTAL</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td align = "center"><b>{{ total }}</b></td>
+      </tr>
+    </table>
+
+{% endblock %}

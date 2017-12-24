@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    One share of {{ sym.name }} ({{ sym.symbol }}) costs ${{ sym.price }}.
+{% endblock %}
